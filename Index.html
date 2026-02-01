@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>To Haggu's Gf💖</title>
+
+  <style>
+    body {
+      height: 100vh;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: "Poppins", Arial, sans-serif;
+      background: linear-gradient(to bottom right, #ffe6f0, #fff0f5);
+      overflow: hidden;
+    }
+
+    /* ✅ Floating Hearts Animation */
+    .heart {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: pink;
+      transform: rotate(45deg);
+      animation: floatUp 6s infinite ease-in;
+    }
+
+    .heart::before,
+    .heart::after {
+      content: "";
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: pink;
+      border-radius: 50%;
+    }
+
+    .heart::before {
+      top: -10px;
+      left: 0;
+    }
+
+    .heart::after {
+      left: -10px;
+      top: 0;
+    }
+
+    @keyframes floatUp {
+      0% {
+        transform: translateY(100vh) rotate(45deg);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-10vh) rotate(45deg);
+        opacity: 0;
+      }
+    }
+
+    /* ✅ Valentine Box */
+    .box {
+      text-align: center;
+      padding: 40px;
+      background: white;
+      border-radius: 20px;
+      box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.2);
+      max-width: 420px;
+      width: 90%;
+      position: relative;
+      z-index: 5;
+      animation: popIn 1s ease;
+    }
+
+    @keyframes popIn {
+      from {
+        transform: scale(0.5);
+        opacity: 0;
+      }
+      to {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+
+    h1 {
+      color: hotpink;
+      font-size: 30px;
+      margin-bottom: 8px;
+      font-weight: bold;
+    }
+
+    h2 {
+      color: #ff3385;
+      font-size: 20px;
+    }
+
+    /* ✅ Surprise Message */
+    #gif h2 {
+      color: black;
+    }
+
+    #gif h2:first-child {
+      font-size: 16px;
+      white-space: nowrap;
+    }
+
+    #gif h2:last-child {
+      color: red;
+      font-size: 22px;
+      font-weight: bold;
+    }
+
+    button {
+      padding: 12px 25px;
+      font-size: 18px;
+      margin: 15px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: 0.3s ease;
+    }
+
+    #yes {
+      background: #ff4d88;
+      color: white;
+    }
+
+    #yes:hover {
+      transform: scale(1.1);
+    }
+
+    #no {
+      background: #666;
+      color: white;
+      position: absolute;
+    }
+
+    /* ✅ Nishma Photo Circle */
+    img {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      border: 4px solid pink;
+      margin-bottom: 15px;
+      object-fit: cover;
+    }
+
+    /* ✅ YES Surprise */
+    #gif {
+      display: none;
+      margin-top: 20px;
+      animation: fadeIn 1s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    /* ✅ Video Styling */
+    video {
+      display: none;
+      width: 100%;
+      margin-top: 20px;
+      border-radius: 15px;
+      border: 3px solid pink;
+    }
+
+    /* ✅ Fireworks */
+    .firework {
+      position: absolute;
+      width: 8px;
+      height: 8px;
+      background: gold;
+      border-radius: 50%;
+      animation: explode 1s ease-out forwards;
+    }
+
+    @keyframes explode {
+      from {
+        transform: scale(1);
+        opacity: 1;
+      }
+      to {
+        transform: scale(8);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ✅ Background Music -->
+  <audio id="bgMusic" loop>
+    <source src="music.mp3" type="audio/mp3">
+  </audio>
+
+  <!-- ✅ Floating Hearts Generator -->
+  <script>
+    for (let i = 0; i < 25; i++) {
+      let heart = document.createElement("div");
+      heart.className = "heart";
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.animationDuration = (Math.random() * 3 + 3) + "s";
+      heart.style.opacity = Math.random();
+      heart.style.transform = "scale(" + (Math.random() + 0.6) + ")";
+      document.body.appendChild(heart);
+    }
+  </script>
+
+  <!-- ✅ Valentine Proposal Box -->
+  <div class="box">
+
+    <!-- ✅ Her Photo -->
+    <img src="nishma.jpg" alt="Nishma Babyyy">
+
+    <h1>HELLO MY KOOTIE PIE</h1>
+    <h2>IT'S VALENTINE SEASONNN💌</h2>
+    <h2>WILL YOU BE MINE?🥹</h2>
+
+    <button id="yes">Yes 🫶🏻</button>
+    <button id="no">No 🌚</button>
+
+    <!-- ✅ Surprise Message -->
+    <div id="gif">
+      <h2>NICE TRY😂 I KNEW YOU COULDN'T SAY NO😚</h2>
+      <h2>I LOVE YOU BABY♥️</h2>
+
+      <img style="width:250px; height:auto; border-radius:15px;"
+        src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExZXo0OHZ4dmRka3N3Z2I3ZTczZzdvcDJubjUwZnF3aTFoeWw5YXdsdyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/ujTVMASREzuRbH6zy5/giphy.gif">
+    </div>
+
+    <!-- ✅ Surprise Video -->
+    <video id="loveVideo" controls>
+      <source src="myvideo.mp4" type="video/mp4">
+    </video>
+
+  </div>
+
+  <!-- ✅ Functionality Script -->
+  <script>
+    const noButton = document.getElementById("no");
+    const yesButton = document.getElementById("yes");
+    const gifDiv = document.getElementById("gif");
+    const music = document.getElementById("bgMusic");
+    const video = document.getElementById("loveVideo");
+
+    let moveCount = 0;
+    const maxMoves = 30;
+
+    function moveNoButton() {
+      if (moveCount >= maxMoves) {
+        noButton.style.display = "none";
+        return;
+      }
+
+      moveCount++;
+
+      const x = Math.random() * (window.innerWidth - 150);
+      const y = Math.random() * (window.innerHeight - 120);
+
+      noButton.style.left = x + "px";
+      noButton.style.top = y + "px";
+    }
+
+    noButton.addEventListener("mouseover", moveNoButton);
+    noButton.addEventListener("click", moveNoButton);
+
+    function fireworks() {
+      for (let i = 0; i < 15; i++) {
+        let fw = document.createElement("div");
+        fw.className = "firework";
+
+        fw.style.left = Math.random() * window.innerWidth + "px";
+        fw.style.top = Math.random() * window.innerHeight + "px";
+
+        document.body.appendChild(fw);
+
+        setTimeout(() => fw.remove(), 1000);
+      }
+    }
+
+    yesButton.addEventListener("click", () => {
+
+      // ✅ Play Music
+      music.play();
+
+      // ✅ Show Surprise Message
+      gifDiv.style.display = "block";
+
+      // ✅ Show & Play Video
+      video.style.display = "block";
+      video.play();
+
+      // ✅ Hide Buttons
+      yesButton.style.display = "none";
+      noButton.style.display = "none";
+
+      // ✅ Fireworks
+      fireworks();
+      setInterval(fireworks, 1200);
+    });
+  </script>
+
+</body>
+</html>
